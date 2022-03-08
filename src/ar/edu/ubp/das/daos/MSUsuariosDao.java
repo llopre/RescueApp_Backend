@@ -55,12 +55,12 @@ return u;
 		try {
     		this.connect();
     	
-    		//this.setProcedure("dbo.get_usuario(?,?)");
-    		//this.setParameter(1, usuario.getCuil());
-    		//this.setParameter(2, usuario.getClave());
-    		this.setProcedure("dbo.get_all_usuarios");
-    		System.out.println("Entro desde dao select");
-    		System.out.println(this.executeQuery());
+    		this.setProcedure("dbo.get_usuario(?,?)");
+    		this.setParameter(1, usuario.getCuil());
+    		this.setParameter(2, usuario.getClave());
+    		//this.setProcedure("dbo.get_all_usuarios");
+    		
+    		//System.out.println(this.executeQuery());
     		return this.executeQuery();
     	}
     	finally {
