@@ -46,7 +46,7 @@ public class MSUsuariosDao extends Dao<UsuarioBean, UsuarioBean> {
 	    u.setEmail(result.getString("email"));
 	    u.setClave(result.getString("clave"));
 	    u.setEmailVerificado(result.getString("email_verificado"));
-return u;
+	    return u;
 	}
 
 	@Override
@@ -54,13 +54,9 @@ return u;
 		// TODO Auto-generated method stub
 		try {
     		this.connect();
-    	
     		this.setProcedure("dbo.get_usuario(?,?)");
     		this.setParameter(1, usuario.getCuil());
     		this.setParameter(2, usuario.getClave());
-    		//this.setProcedure("dbo.get_all_usuarios");
-    		
-    		//System.out.println(this.executeQuery());
     		return this.executeQuery();
     	}
     	finally {
